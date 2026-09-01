@@ -1,0 +1,280 @@
+{
+  "basics": {
+    "name": "James Swartwood",
+    "title": "Robotics Software Engineer II (CV/AI)",
+    "avatar": "assets/profile.jpg",
+    "email": "james@swartwood.com",
+    "linkedin": "https://www.linkedin.com/in/jamesswartwood",
+    "contactFormUrl": "https://forms.google.com/your-form-url",
+    "about": "Robotics and Computer Vision Engineer specializing in multi-agent LLM systems, human-in-the-loop interfaces, gesture control, and 3D perception."
+  },
+  "experience": [
+    {
+      "role": "Robotics Software Engineer II (CV/AI)",
+      "company": "Fresh Consulting",
+      "employmentType": "Full-time",
+      "period": "May 2024 - Present · 2 yrs 4 mos",
+      "location": "Bellevue, Washington, United States · Hybrid",
+      "logo": "assets/fresh_consulting.png",
+      "bullets": [
+        "Served as an individual contributor on multiple client projects.",
+        "Implemented a computer vision system for retail product monitoring.",
+        "Designed multi-agent LLM systems to parse unstructured input into fleet-wide commands and robot actions.",
+        "Engineered human-robot interfaces for human-in-the-loop robotics applications.",
+        "Developed ROS control packages for server farm automation."
+      ],
+      "media": [
+        {
+          "title": "Fresh Film - \"Why we do what we do\"",
+          "description": "Showcase video representing engineering and development initiatives at Fresh Consulting.",
+          "thumbnail": "assets/media/fresh_film.png",
+          "url": "https://freshconsulting.com"
+        }
+      ]
+    },
+    {
+      "role": "Robotics Software Engineer (CV/AI)",
+      "company": "Ally Robotics",
+      "employmentType": "Full-time",
+      "period": "Sep 2022 - Mar 2024 · 1 yr 7 mos",
+      "location": "Bellevue, Washington, United States · Hybrid",
+      "logo": "assets/ally_robotics.png",
+      "bullets": [
+        "Devised and led R&D projects, including user experience & safety, teaching methods, and human-robot interfaces such as vision and voice AI.",
+        "Represented the company for fundraising with multimillion-dollar parties, leading technical demos and occasionally traveling to meet with investors and clients.",
+        "Served as the point person in the Doosan Robotics partnership."
+      ],
+      "media": [
+        {
+          "title": "Ally Robotics - Enhancing the Human Experience",
+          "description": "This video features the Ally Robotics team, including myself, performing demos with an early version of Ally's arm.",
+          "thumbnail": "assets/media/ally_human_experience.png",
+          "url": ""
+        },
+        {
+          "title": "Early Voice Control Demo Video",
+          "description": "This video is an early prototype demo of an AI controlling the robot arm using voice commands.",
+          "thumbnail": "assets/media/ally_voice_demo.png",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "role": "Robotics Intern (CV/AI)",
+      "company": "Ally Robotics",
+      "employmentType": "Internship",
+      "period": "Jul 2022 - Sep 2022 · 3 mos",
+      "location": "On-site",
+      "logo": "assets/ally_robotics.png",
+      "bullets": [
+        "Designed a robotic arm gesture control system that was featured at TechCrunch Disrupt.",
+        "Featured in many promotional videos that pushed the company into the public spotlight."
+      ],
+      "media": [
+        {
+          "title": "TechCrunch Disrupt, 2022: Startup Battlefield - Ally Robotics",
+          "description": "This video is of Ally Robotics demonstrating robot gesture control on the TechCrunch stage in 2022.",
+          "thumbnail": "assets/media/techcrunch.png",
+          "url": ""
+        },
+        {
+          "title": "Ally Robotics - Gesture Control",
+          "description": "This is one of the video demos published online by Ally Robotics featuring me.",
+          "thumbnail": "assets/media/gesture_control.png",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "role": "Research Assistant – Environmental Science & Computer Science",
+      "company": "University of Washington",
+      "employmentType": "",
+      "period": "Mar 2021 - Jun 2022 · 1 yr 4 mos",
+      "location": "Seattle, Washington, United States",
+      "logo": "assets/uw.png",
+      "bullets": [
+        "Applied computer vision to build environmental science research tools.",
+        "Developed image labeling software, saving researchers hundreds of manual hours."
+      ],
+      "media": [
+        {
+          "title": "Pole Detection & Classification Algorithm",
+          "description": "This website describes the pole detection algorithm developed for hydrology research projects using snow data.",
+          "thumbnail": "assets/media/pole_detection.png",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "role": "Machine Learning Intern",
+      "company": "Fresh Consulting",
+      "employmentType": "Internship",
+      "period": "Jun 2021 - Aug 2021 · 3 mos",
+      "location": "Bellevue, Washington, United States · On-site",
+      "logo": "assets/fresh_consulting.png",
+      "bullets": [
+        "Developed a collision avoidance application that leveraged PCL in C++ to detect people and their trajectories in real time with a point cloud stream.",
+        "Implemented an algorithm to perform segmentation in real-time on a point cloud video stream using Euclidean clustering.",
+        "Designed, trained, and tested custom machine-learning models to detect additional objects."
+      ],
+      "media": [
+        {
+          "title": "Point Cloud People Detection Example",
+          "description": "This screenshot was taken while performing real-time detection of people inside a point cloud representation.",
+          "thumbnail": "assets/media/point_cloud.png",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "role": "Robotics Intern",
+      "company": "Fresh Consulting",
+      "employmentType": "Internship",
+      "period": "Jun 2020 - Sep 2020 · 4 mos",
+      "location": "Washington, United States · Hybrid",
+      "logo": "assets/fresh_consulting.png",
+      "bullets": [
+        "Developed a ROS package to control an AMR and train waypoints.",
+        "Experienced simulating the system with Gazebo before running it on the live robot."
+      ],
+      "media": []
+    },
+    {
+      "role": "Software Intern",
+      "company": "Fresh Consulting",
+      "employmentType": "Internship",
+      "period": "Jul 2019 - Aug 2019 · 2 mos",
+      "location": "Washington, United States · On-site",
+      "logo": "assets/fresh_consulting.png",
+      "bullets": [
+        "Developed XR executables within Unity for robot point-of-view applications.",
+        "Leveraged OpenCV and Azure Cognitive Services to trigger robot behaviors on object detection."
+      ],
+      "media": []
+    }
+  ],
+  "volunteering": [
+    {
+      "role": "Founder / Instructor",
+      "organization": "Self Defense NW",
+      "period": "Mar 2022 - Present · 4 yrs 6 mos",
+      "cause": "Education",
+      "logo": "assets/sdnw.png",
+      "bullets": [
+        "Organized and led self-defense seminars for a variety of groups: martial arts schools, college communities, and foster care support groups.",
+        "Developed a basic self-defense outline, published online, used as a starting point and discussion catalyst for anyone interested in learning how to better protect themselves and their communities."
+      ],
+      "media": [
+        {
+          "title": "Self Defense NW Website",
+          "description": "Official portal outlining self-defense curricula and seminar schedules.",
+          "thumbnail": "assets/media/sdnw_site.png",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "role": "Lead Instructor",
+      "organization": "Zen Martial Arts International NW",
+      "period": "Jun 2019 - Present · 7 yrs 3 mos",
+      "cause": "Health",
+      "logo": "assets/zmainw.png",
+      "bullets": [
+        "Fostering an inclusive environment built on mutual growth for students of all ages, identities, and backgrounds.",
+        "Created a grappling curriculum based on Japanese systems of martial arts that encourages self-defense practices and mobility over competition.",
+        "This grappling system has enabled folks of all ages and genders to comfortably participate in physical training with each other and grow together as martial artists.",
+        "Expanded student curriculum to include teaching assistant roles to nurture the next generation of instructors and provide practice caring for and training newer students of all ages."
+      ],
+      "media": []
+    },
+    {
+      "role": "Instructor",
+      "organization": "Zen Martial Arts International NW",
+      "period": "Jun 2015 - Jun 2019 · 4 yrs 1 mo",
+      "cause": "Health",
+      "logo": "assets/zmainw.png",
+      "bullets": [
+        "Taught as an instructor in martial arts classes for all age groups, covering disciplines such as Song Moo Kwan Tae Kwon Do, Shotokan Karate, Judo, Wing Chun, and Arnis.",
+        "Developed junior curriculum to encourage children to engage more in their progression and have more leadership training opportunities at higher levels."
+      ],
+      "media": []
+    },
+    {
+      "role": "Assistant/Substitute Instructor",
+      "organization": "Seattle School Of Aikido",
+      "period": "Jan 2017 - Mar 2020 · 3 yrs 3 mos",
+      "cause": "Children",
+      "logo": "assets/ssoa.png",
+      "bullets": [
+        "Instructed children's classes, ages 5 to 18, in various Japanese martial arts."
+      ],
+      "media": []
+    },
+    {
+      "role": "FYP - Returning First Year Interest Group Leader",
+      "organization": "University of Washington",
+      "period": "Mar 2022 - Dec 2022 · 10 mos",
+      "cause": "Education",
+      "logo": "assets/uw.png",
+      "bullets": [
+        "Facilitated another section of GEN ST 199, by serving as a teacher and a mentor for a class of students and helped support those students as they developed confidence in navigating the UW and Seattle."
+      ],
+      "media": []
+    },
+    {
+      "role": "FYP - First Year Interest Group Leader",
+      "organization": "University of Washington",
+      "period": "Mar 2021 - Dec 2021 · 10 mos",
+      "cause": "Education",
+      "logo": "assets/uw.png",
+      "bullets": []
+    }
+  ],
+  "honors": [
+    {
+      "title": "4th Dan Black Belt Promotion",
+      "issuer": "Zen Martial Arts International NW",
+      "date": "May 2024",
+      "description": "Awarded by Master Greg Di Loreto and Grandmaster W. P. Yip",
+      "logo": "assets/zmainw.png",
+      "media": [
+        {
+          "title": "The Heart of a Champion",
+          "description": "A paper written by James Swartwood that was presented at the beginning of the event.",
+          "thumbnail": "assets/media/paper_placeholder.png",
+          "url": ""
+        },
+        {
+          "title": "4th Dan Promotion Video",
+          "description": "This video includes highlights from the test, including demonstrations and feedback sessions.",
+          "thumbnail": "assets/media/4th_dan_video.png",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "title": "Guest Guitarist",
+      "issuer": "School of Music at University of Washington",
+      "date": "Nov 2019",
+      "description": "Featured as the solo guitarist playing alongside the UW University Chorale in the Katharyn Alvord Gerlich Theater of UW Meany Hall, conducted by Dr. Wyres.",
+      "logo": "assets/uw.png",
+      "media": []
+    },
+    {
+      "title": "Black Belt at ZMAINW",
+      "issuer": "Zen Martial Arts International NW",
+      "date": "Aug 2018",
+      "description": "Awarded by Master Greg Di Loreto, Grandmaster Richard Stillwagon, and Grandmaster W. P. Yip",
+      "logo": "assets/zmainw.png",
+      "media": []
+    },
+    {
+      "title": "Black Belt at Japanese Fighting Arts NW",
+      "issuer": "Seattle School of Aikido",
+      "date": "Jan 2018",
+      "description": "Awarded by Evan Bucy",
+      "logo": "assets/ssoa.png",
+      "media": []
+    }
+  ]
+}

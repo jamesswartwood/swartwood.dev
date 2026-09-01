@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <script>
+    const cssLink = document.createElement('link');
+    cssLink.rel = 'stylesheet';
+    cssLink.href = `style.css?v=${Date.now()}`;
+    document.head.appendChild(cssLink);
+  </script>
+</head>
+<body>
+  <header id="top-nav">
+    <div class="nav-left">
+      <img id="nav-avatar" src="" alt="Profile Photo" />
+      <div class="nav-meta">
+        <h1 id="nav-name"></h1>
+        <span id="nav-title"></span>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a id="nav-email" href="" class="contact-link">Email</a>
+      <a id="nav-linkedin" href="" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
+      <a id="nav-contact-btn" href="" target="_blank" rel="noopener" class="btn-contact">Get in Touch</a>
+    </div>
+  </header>
+
+  <div class="page-layout">
+    <aside id="sidebar">
+      <nav>
+        <ul>
+          <li><a href="#about-section">About</a></li>
+          <li><a href="#experience-section">Work Experience</a></li>
+          <li><a href="#volunteering-section">Volunteering</a></li>
+          <li><a href="#honors-section">Honors & Awards</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main id="main-content">
+      <section id="about-section" class="content-section">
+        <h2>About</h2>
+        <div class="card" id="about-content"></div>
+      </section>
+
+      <section id="experience-section" class="content-section">
+        <h2>Work Experience</h2>
+        <div id="experience-container" class="card-list"></div>
+      </section>
+
+      <section id="volunteering-section" class="content-section">
+        <h2>Volunteering</h2>
+        <div id="volunteering-container" class="card-list"></div>
+      </section>
+
+      <section id="honors-section" class="content-section">
+        <h2>Honors & Awards</h2>
+        <div id="honors-container" class="card-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="media-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-overlay" onclick="closeModal()"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <img id="modal-img" src="" alt="Media preview" />
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+      <a id="modal-link" href="" target="_blank" rel="noopener" class="btn-contact hidden">Open Link</a>
+    </div>
+  </div>
+
+  <script>
+    const jsScript = document.createElement('script');
+    jsScript.src = `main.js?v=${Date.now()}`;
+    document.body.appendChild(jsScript);
+  </script>
+</body>
+</html>

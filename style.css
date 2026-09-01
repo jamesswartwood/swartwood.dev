@@ -1,0 +1,320 @@
+:root {
+  --bg-black: #0d0e11;
+  --bg-dark: #16181d;
+  --bg-card: #1f2229;
+  --bg-card-hover: #262a33;
+  --accent-red: #e63946;
+  --accent-red-hover: #ff4d5a;
+  --text-main: #f1f3f5;
+  --text-muted: #9aa0a6;
+  --border-color: #2e3440;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-black);
+  color: var(--text-main);
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+/* Top Navigation Bar */
+#top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  background-color: var(--bg-dark);
+  border-bottom: 2px solid var(--accent-red);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#nav-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-red);
+  object-fit: cover;
+  background-color: var(--bg-card);
+}
+
+.nav-meta h1 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.nav-meta span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.contact-link {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.contact-link:hover {
+  color: var(--accent-red);
+}
+
+.btn-contact {
+  background-color: var(--accent-red);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.btn-contact:hover {
+  background-color: var(--accent-red-hover);
+}
+
+/* Page Layout */
+.page-layout {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  gap: 2.5rem;
+}
+
+/* Sticky Sidebar */
+#sidebar {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+#sidebar nav {
+  position: sticky;
+  top: 6rem;
+}
+
+#sidebar ul {
+  list-style: none;
+  border-left: 2px solid var(--border-color);
+}
+
+#sidebar li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+#sidebar li a:hover {
+  color: #fff;
+  border-left: 2px solid var(--accent-red);
+  margin-left: -2px;
+}
+
+/* Content Area */
+#main-content {
+  flex-grow: 1;
+}
+
+.content-section {
+  margin-bottom: 3.5rem;
+  scroll-margin-top: 5.5rem;
+}
+
+.content-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.4rem;
+  color: #fff;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* LinkedIn-Style Content Cards */
+.card {
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  transition: background-color 0.2s;
+}
+
+.card:hover {
+  background-color: var(--bg-card-hover);
+}
+
+.card-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  background-color: #fff;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.card-body {
+  flex-grow: 1;
+}
+
+.card-header h3 {
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.card-header .subtitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.card-header .meta-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.card-bullets {
+  margin-top: 0.6rem;
+  padding-left: 1.2rem;
+  font-size: 0.88rem;
+  color: #e1e4e8;
+}
+
+.card-bullets li {
+  margin-bottom: 0.35rem;
+}
+
+/* Media Gallery Showcase */
+.media-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.9rem;
+}
+
+.media-item {
+  width: 220px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.media-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-red);
+}
+
+.media-item img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  background-color: #000;
+}
+
+.media-title {
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Modal Popup */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-content {
+  position: relative;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  padding: 1.5rem;
+  z-index: 10;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #fff;
+}
+
+#modal-img {
+  width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+#modal-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+#modal-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
