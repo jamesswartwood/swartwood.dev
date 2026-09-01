@@ -292,27 +292,108 @@
   ],
   "projects": [
     {
-      "title": "Robotic Arm Gesture Control",
-      "role": "Lead Developer",
-      "period": "2022",
-      "description": "Engineered real-time vision gesture recognition interface for robotic arm manipulation featured at TechCrunch Disrupt.",
-      "logo": "assets/ally_robotics.png",
-      "bullets": [
-        "Zero-latency command pipeline via ROS integration.",
-        "Showcased live on stage at TechCrunch Battlefield."
-      ],
-      "media": []
+      "id": "proj-robotics-ai",
+      "categoryName": "Robotics & AI",
+      "items": [
+        {
+          "title": "Robotic Arm Gesture Control",
+          "role": "Lead Developer",
+          "period": "2022",
+          "description": "Engineered real-time vision gesture recognition interface for robotic arm manipulation featured at TechCrunch Disrupt.",
+          "logo": "assets/ally_robotics.png",
+          "bullets": [
+            "Zero-latency command pipeline via ROS integration.",
+            "Showcased live on stage at TechCrunch Battlefield."
+          ],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "proj-environmental-science",
+      "categoryName": "Environmental Science",
+      "items": [
+        {
+          "title": "Hydrology Snow Pole Detection",
+          "role": "Computer Vision Research Assistant",
+          "period": "2021 - 2022",
+          "description": "Autonomous detection and label classification pipeline for outdoor field research cameras.",
+          "logo": "assets/uw.png",
+          "bullets": [
+            "Automated hundreds of manual hours of image annotation.",
+            "Utilized custom object detection models on noisy natural environment imagery."
+          ],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "proj-frontend-dev",
+      "categoryName": "Front-End Development",
+      "items": [
+        {
+          "title": "Portfolio & Interactive JSON Engine",
+          "role": "Frontend Developer",
+          "period": "2026",
+          "description": "Modular web portfolio driven dynamically via custom schema JSON, featuring real-time state tab routing and asset showcase modals.",
+          "logo": "assets/default_logo.png",
+          "bullets": [
+            "Built with vanilla JS, CSS3, and semantic HTML5.",
+            "Fully reactive sidebar navigation system with multi-tier anchoring."
+          ],
+          "media": []
+        }
+      ]
     }
   ],
   "organizations": [
     {
-      "name": "Emerald City Cardfest",
-      "role": "Organizer & Technical Administrator",
-      "period": "2024 - Present",
-      "description": "Directing technical operations, vendor management, and digital ticketing systems for large scale community events.",
-      "logo": "assets/default_logo.png",
-      "bullets": [],
-      "media": []
+      "id": "org-martial-arts",
+      "categoryName": "Martial Arts",
+      "items": [
+        {
+          "name": "Zen Martial Arts International NW",
+          "role": "Lead Instructor & 4th Dan",
+          "period": "2015 - Present",
+          "description": "Directing instruction across traditional and modern martial disciplines, mentoring junior staff, and developing inclusive curricula.",
+          "logo": "assets/zmainw.png",
+          "bullets": [],
+          "media": []
+        },
+        {
+          "name": "Japanese Fighting Arts NW",
+          "role": "Practitioner & Black Belt",
+          "period": "2018 - Present",
+          "description": "Training in Japanese sword arts and aikido traditions.",
+          "logo": "assets/ssoa.png",
+          "bullets": [],
+          "media": []
+        }
+      ]
+    },
+    {
+      "id": "org-community-outreach",
+      "categoryName": "Community Outreach",
+      "items": [
+        {
+          "name": "Self Defense NW",
+          "role": "Founder & Community Lead",
+          "period": "2022 - Present",
+          "description": "Offering accessible self-defense seminars for vulnerable groups and community centers.",
+          "logo": "assets/sdnw.png",
+          "bullets": [],
+          "media": []
+        },
+        {
+          "name": "Emerald City Cardfest",
+          "role": "Organizer & Technical Administrator",
+          "period": "2024 - Present",
+          "description": "Directing technical operations, digital registration infrastructure, and vendor management.",
+          "logo": "assets/default_logo.png",
+          "bullets": [],
+          "media": []
+        }
+      ]
     }
   ]
 }

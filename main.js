@@ -26,7 +26,6 @@ function renderPage(data) {
   document.getElementById('nav-linkedin').href = b.linkedin;
   document.getElementById('nav-contact-btn').href = b.contactFormUrl;
 
-  // Format Dynamic Resume Download Name: JamesSwartwood_Resume_YYYYMMDD.pdf
   const resumeLink = document.getElementById('nav-resume');
   if (resumeLink) {
     const now = new Date();
@@ -78,30 +77,38 @@ function renderPage(data) {
     media: item.media
   })).join('');
 
-  // 6. Projects & Showcase
-  const projContainer = document.getElementById('projects-container');
-  if (projContainer && data.projects) {
-    projContainer.innerHTML = data.projects.map(item => createSingleCardHTML({
-      logo: item.logo,
-      title: item.title,
-      subtitle: item.role,
-      meta: item.period,
-      bullets: item.bullets,
-      media: item.media
-    })).join('');
+  // 6. Projects & Showcase (Categorized rendering + Dynamic sidebar subnav)
+  if (data.projects && data.projects.length > 0) {
+    renderCategorizedSection({
+      categories: data.projects,
+      wrapperId: 'projects-categories-wrapper',
+      subnavId: 'projects-subnav',
+      renderItemFn: item => createSingleCardHTML({
+        logo: item.logo,
+        title: item.title,
+        subtitle: item.role,
+        meta: item.period,
+        bullets: item.bullets,
+        media: item.media
+      })
+    });
   }
 
-  // 7. Organizations
-  const orgContainer = document.getElementById('organizations-container');
-  if (orgContainer && data.organizations) {
-    orgContainer.innerHTML = data.organizations.map(item => createSingleCardHTML({
-      logo: item.logo,
-      title: item.name,
-      subtitle: item.role,
-      meta: item.period,
-      bullets: item.bullets,
-      media: item.media
-    })).join('');
+  // 7. Organizations (Categorized rendering + Dynamic sidebar subnav)
+  if (data.organizations && data.organizations.length > 0) {
+    renderCategorizedSection({
+      categories: data.organizations,
+      wrapperId: 'organizations-categories-wrapper',
+      subnavId: 'organizations-subnav',
+      renderItemFn: item => createSingleCardHTML({
+        logo: item.logo,
+        title: item.name,
+        subtitle: item.role,
+        meta: item.period,
+        bullets: item.bullets,
+        media: item.media
+      })
+    });
   }
 
   // Bind Media Modal triggers
@@ -110,6 +117,29 @@ function renderPage(data) {
       openModal(JSON.parse(el.dataset.media));
     });
   });
+}
+
+/**
+ * Renders categorized sections into the main pane and populates corresponding sidebar anchor links
+ */
+function renderCategorizedSection({ categories, wrapperId, subnavId, renderItemFn }) {
+  const wrapper = document.getElementById(wrapperId);
+  const subnav = document.getElementById(subnavId);
+  
+  if (!wrapper || !subnav) return;
+
+  wrapper.innerHTML = categories.map(cat => `
+    <section id="${cat.id}" class="content-section">
+      <h2>${cat.categoryName}</h2>
+      <div class="card-list">
+        ${cat.items.map(renderItemFn).join('')}
+      </div>
+    </section>
+  `).join('');
+
+  subnav.innerHTML = categories.map(cat => `
+    <li><a href="#${cat.id}">${cat.categoryName}</a></li>
+  `).join('');
 }
 
 function groupConsecutiveItems(items, key) {
@@ -210,17 +240,22 @@ function renderMedia(media) {
 
 function switchTab(targetId) {
   const categoryBtns = document.querySelectorAll('.category-btn');
-  const subnav = document.getElementById('summary-subnav');
   const tabPanes = document.querySelectorAll('.tab-pane');
 
   categoryBtns.forEach(b => b.classList.toggle('active', b.dataset.target === targetId));
   tabPanes.forEach(pane => pane.classList.toggle('active', pane.id === targetId));
 
-  if (targetId === 'tab-summary') {
-    subnav.style.display = 'block';
-  } else {
-    subnav.style.display = 'none';
-  }
+  // Toggle subnavigation lists per active category
+  const subnavMap = {
+    'tab-summary': 'summary-subnav',
+    'tab-projects': 'projects-subnav',
+    'tab-organizations': 'organizations-subnav'
+  };
+
+  Object.entries(subnavMap).forEach(([tab, subnavId]) => {
+    const el = document.getElementById(subnavId);
+    if (el) el.style.display = (tab === targetId) ? 'block' : 'none';
+  });
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -231,7 +266,6 @@ function setupSidebarNavigation() {
   });
 }
 
-/* Modal Management */
 function openModal(media) {
   const modal = document.getElementById('media-modal');
   document.getElementById('modal-img').src = media.thumbnail || '';
