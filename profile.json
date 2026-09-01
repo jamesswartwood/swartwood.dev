@@ -3,9 +3,10 @@
     "name": "James Swartwood",
     "title": "Robotics Software Engineer II (CV/AI)",
     "avatar": "assets/profile.jpg",
-    "email": "james@swartwood.com",
-    "linkedin": "https://www.linkedin.com/in/jamesswartwood",
+    "email": "your-email@example.com",
+    "linkedin": "https://www.linkedin.com/in/your-profile",
     "contactFormUrl": "https://forms.google.com/your-form-url",
+    "resumePath": "resume.pdf",
     "about": "Robotics and Computer Vision Engineer specializing in multi-agent LLM systems, human-in-the-loop interfaces, gesture control, and 3D perception."
   },
   "experience": [
@@ -274,6 +275,31 @@
       "date": "Jan 2018",
       "description": "Awarded by Evan Bucy",
       "logo": "assets/ssoa.png",
+      "media": []
+    }
+  ],
+  "projects": [
+    {
+      "title": "Robotic Arm Gesture Control",
+      "role": "Lead Developer",
+      "period": "2022",
+      "description": "Engineered real-time vision gesture recognition interface for robotic arm manipulation featured at TechCrunch Disrupt.",
+      "logo": "assets/ally_robotics.png",
+      "bullets": [
+        "Zero-latency command pipeline via ROS integration.",
+        "Showcased live on stage at TechCrunch Battlefield."
+      ],
+      "media": []
+    }
+  ],
+  "organizations": [
+    {
+      "name": "Emerald City Cardfest",
+      "role": "Organizer & Technical Administrator",
+      "period": "2024 - Present",
+      "description": "Directing technical operations, vendor management, and digital ticketing systems for large scale community events.",
+      "logo": "assets/default_logo.png",
+      "bullets": [],
       "media": []
     }
   ]

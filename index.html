@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <title>James Swartwood | Portfolio</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
 
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
@@ -26,7 +27,7 @@
       </div>
     </div>
     <div class="nav-right">
-      <a id="nav-email" href="" class="contact-link">Email</a>
+      <a id="nav-resume" href="resume.pdf" class="contact-link" download>Resume</a>
       <a id="nav-linkedin" href="" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
       <a id="nav-contact-btn" href="" target="_blank" rel="noopener" class="btn-contact">Get in Touch</a>
     </div>
@@ -34,36 +35,69 @@
 
   <div class="page-layout">
     <aside id="sidebar">
-      <nav>
-        <ul>
-          <li><a href="#about-section">About</a></li>
-          <li><a href="#experience-section">Work Experience</a></li>
-          <li><a href="#volunteering-section">Volunteering</a></li>
-          <li><a href="#honors-section">Honors & Awards</a></li>
-        </ul>
+      <nav class="sidebar-nav">
+        <div class="sidebar-group">
+          <button class="category-btn active" data-target="tab-summary">
+            Professional Summary
+          </button>
+          <ul class="sub-nav-links" id="summary-subnav">
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#experience-section">Work Experience</a></li>
+            <li><a href="#volunteering-section">Volunteering</a></li>
+            <li><a href="#honors-section">Honors & Awards</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <button class="category-btn" data-target="tab-projects">
+            Projects & Showcase
+          </button>
+        </div>
+
+        <div class="sidebar-group">
+          <button class="category-btn" data-target="tab-organizations">
+            Organizations
+          </button>
+        </div>
       </nav>
     </aside>
 
     <main id="main-content">
-      <section id="about-section" class="content-section">
-        <h2>About</h2>
-        <div class="card" id="about-content"></div>
-      </section>
+      <div id="tab-summary" class="tab-pane active">
+        <section id="about-section" class="content-section">
+          <h2>About</h2>
+          <div class="card" id="about-content"></div>
+        </section>
 
-      <section id="experience-section" class="content-section">
-        <h2>Work Experience</h2>
-        <div id="experience-container" class="card-list"></div>
-      </section>
+        <section id="experience-section" class="content-section">
+          <h2>Work Experience</h2>
+          <div id="experience-container" class="card-list"></div>
+        </section>
 
-      <section id="volunteering-section" class="content-section">
-        <h2>Volunteering</h2>
-        <div id="volunteering-container" class="card-list"></div>
-      </section>
+        <section id="volunteering-section" class="content-section">
+          <h2>Volunteering</h2>
+          <div id="volunteering-container" class="card-list"></div>
+        </section>
 
-      <section id="honors-section" class="content-section">
-        <h2>Honors & Awards</h2>
-        <div id="honors-container" class="card-list"></div>
-      </section>
+        <section id="honors-section" class="content-section">
+          <h2>Honors & Awards</h2>
+          <div id="honors-container" class="card-list"></div>
+        </section>
+      </div>
+
+      <div id="tab-projects" class="tab-pane">
+        <section class="content-section">
+          <h2>Projects & Showcase</h2>
+          <div id="projects-container" class="card-list"></div>
+        </section>
+      </div>
+
+      <div id="tab-organizations" class="tab-pane">
+        <section class="content-section">
+          <h2>Organizations</h2>
+          <div id="organizations-container" class="card-list"></div>
+        </section>
+      </div>
     </main>
   </div>
 
