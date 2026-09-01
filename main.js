@@ -217,15 +217,33 @@ function openModal(media) {
   document.getElementById('modal-img').src = media.thumbnail || '';
   document.getElementById('modal-title').textContent = media.title;
   document.getElementById('modal-desc').textContent = media.description || '';
+  
   const linkBtn = document.getElementById('modal-link');
   
+  // Reset button state completely
+  linkBtn.style.display = 'none';
+  linkBtn.classList.add('hidden');
+  linkBtn.textContent = '';
+  linkBtn.removeAttribute('href');
+  linkBtn.onclick = null;
+  
   if (media.linkType === 'external' && media.target) {
-    linkBtn.href = media.target; linkBtn.target = '_blank'; linkBtn.onclick = null; linkBtn.textContent = media.buttonLabel || 'Visit Link'; linkBtn.classList.remove('hidden');
+    linkBtn.href = media.target;
+    linkBtn.target = '_blank';
+    linkBtn.textContent = media.buttonLabel || 'Visit Link';
+    linkBtn.classList.remove('hidden');
+    linkBtn.style.display = 'inline-block';
   } else if (media.linkType === 'internal' && media.target) {
-    linkBtn.href = 'javascript:void(0);'; linkBtn.target = '_self';
-    linkBtn.onclick = () => { closeModal(); switchTab(media.target); };
-    linkBtn.textContent = media.buttonLabel || 'View Section'; linkBtn.classList.remove('hidden');
-  } else { linkBtn.classList.add('hidden'); }
+    linkBtn.href = 'javascript:void(0);';
+    linkBtn.target = '_self';
+    linkBtn.onclick = () => {
+      closeModal();
+      switchTab(media.target);
+    };
+    linkBtn.textContent = media.buttonLabel || 'View Section';
+    linkBtn.classList.remove('hidden');
+    linkBtn.style.display = 'inline-block';
+  }
 
   modal.classList.remove('hidden');
 }

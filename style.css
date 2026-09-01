@@ -31,6 +31,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.hidden {
+  display: none !important;
+}
+
 #top-nav {
   position: fixed;
   top: 0;
