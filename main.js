@@ -285,10 +285,27 @@ async function sendChatMessage() {
     USER QUERY: ${userText}`;
     
     const response = await puter.ai.chat(contextPrompt);
-    aiDiv.textContent = response.message.content || response;
+    const rawText = response.message.content || response;
+    
+    // Process markdown into HTML[cite: 5]
+    aiDiv.innerHTML = formatChatMarkdown(rawText);
   } catch (error) {
     console.error("AI Chat Error: ", error);
     aiDiv.textContent = "Sorry, I'm having trouble connecting right now.";
   }
   msgsEl.scrollTop = msgsEl.scrollHeight;
+}
+
+// Lightweight Markdown Parser to render bot responses as HTML
+function formatChatMarkdown(text) {
+  if (!text) return '';
+  return text
+    .replace(/&/g, '&amp;') // Escape HTML to prevent conflicts
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold text
+    .replace(/\*(.*?)\*/g, '<em>$1</em>') // Italic text
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color: #e63946;">$1</a>') // Links
+    .replace(/^(?:-|\*)\s+(.*)$/gm, '&bull; $1') // Bullet points
+    .replace(/\n/g, '<br>'); // Line breaks
 }
