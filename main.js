@@ -131,6 +131,7 @@ function renderCategorizedSection({ categories, wrapperId, subnavId, renderItemF
   wrapper.innerHTML = categories.map(cat => `
     <section id="${cat.id}" class="content-section">
       <h2>${cat.categoryName}</h2>
+      ${cat.note && cat.note.trim() !== '' ? `<p class="section-note">${cat.note}</p>` : ''}
       <div class="card-list">
         ${cat.items.map(renderItemFn).join('')}
       </div>

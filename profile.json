@@ -294,6 +294,7 @@
     {
       "id": "proj-robotics-ai",
       "categoryName": "Robotics & AI",
+      "note": "Note: Several proprietary robotics and CV systems developed under client NDAs are omitted from this list.",
       "items": [
         {
           "title": "Robotic Arm Gesture Control",
@@ -312,6 +313,7 @@
     {
       "id": "proj-environmental-science",
       "categoryName": "Environmental Science",
+      "note": "",
       "items": [
         {
           "title": "Hydrology Snow Pole Detection",
@@ -330,6 +332,7 @@
     {
       "id": "proj-frontend-dev",
       "categoryName": "Front-End Development",
+      "note": "",
       "items": [
         {
           "title": "Portfolio & Interactive JSON Engine",
@@ -350,6 +353,7 @@
     {
       "id": "org-martial-arts",
       "categoryName": "Martial Arts",
+      "note": "",
       "items": [
         {
           "name": "Zen Martial Arts International NW",
@@ -373,7 +377,8 @@
     },
     {
       "id": "org-community-outreach",
-      "categoryName": "Community Outreach",
+      "categoryName": "Community Education & Outreach",
+      "note": "",
       "items": [
         {
           "name": "Self Defense NW",
