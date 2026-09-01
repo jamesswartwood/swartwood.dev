@@ -29,7 +29,9 @@
           "title": "Fresh Film - \"Why we do what we do\"",
           "description": "Showcase video representing engineering and development initiatives at Fresh Consulting.",
           "thumbnail": "assets/media/fresh_film.png",
-          "url": "https://freshconsulting.com"
+          "linkType": "external",
+          "target": "https://freshconsulting.com",
+          "buttonLabel": "Visit Website"
         }
       ]
     },
@@ -50,13 +52,17 @@
           "title": "Ally Robotics - Enhancing the Human Experience",
           "description": "This video features the Ally Robotics team, including myself, performing demos with an early version of Ally's arm.",
           "thumbnail": "assets/media/ally_human_experience.png",
-          "url": ""
+          "linkType": "internal",
+          "target": "tab-projects",
+          "buttonLabel": "View in Projects"
         },
         {
           "title": "Early Voice Control Demo Video",
           "description": "This video is an early prototype demo of an AI controlling the robot arm using voice commands.",
           "thumbnail": "assets/media/ally_voice_demo.png",
-          "url": ""
+          "linkType": "none",
+          "target": "",
+          "buttonLabel": ""
         }
       ]
     },
@@ -76,13 +82,9 @@
           "title": "TechCrunch Disrupt, 2022: Startup Battlefield - Ally Robotics",
           "description": "This video is of Ally Robotics demonstrating robot gesture control on the TechCrunch stage in 2022.",
           "thumbnail": "assets/media/techcrunch.png",
-          "url": ""
-        },
-        {
-          "title": "Ally Robotics - Gesture Control",
-          "description": "This is one of the video demos published online by Ally Robotics featuring me.",
-          "thumbnail": "assets/media/gesture_control.png",
-          "url": ""
+          "linkType": "external",
+          "target": "https://techcrunch.com",
+          "buttonLabel": "Watch on TechCrunch"
         }
       ]
     },
@@ -102,7 +104,9 @@
           "title": "Pole Detection & Classification Algorithm",
           "description": "This website describes the pole detection algorithm developed for hydrology research projects using snow data.",
           "thumbnail": "assets/media/pole_detection.png",
-          "url": ""
+          "linkType": "internal",
+          "target": "tab-projects",
+          "buttonLabel": "View Related Project"
         }
       ]
     },
@@ -123,7 +127,9 @@
           "title": "Point Cloud People Detection Example",
           "description": "This screenshot was taken while performing real-time detection of people inside a point cloud representation.",
           "thumbnail": "assets/media/point_cloud.png",
-          "url": ""
+          "linkType": "none",
+          "target": "",
+          "buttonLabel": ""
         }
       ]
     },
@@ -170,7 +176,9 @@
           "title": "Self Defense NW Website",
           "description": "Official portal outlining self-defense curricula and seminar schedules.",
           "thumbnail": "assets/media/sdnw_site.png",
-          "url": ""
+          "linkType": "internal",
+          "target": "tab-organizations",
+          "buttonLabel": "View Organization Page"
         }
       ]
     },
@@ -243,13 +251,17 @@
           "title": "The Heart of a Champion",
           "description": "A paper written by James Swartwood that was presented at the beginning of the event.",
           "thumbnail": "assets/media/paper_placeholder.png",
-          "url": ""
+          "linkType": "none",
+          "target": "",
+          "buttonLabel": ""
         },
         {
           "title": "4th Dan Promotion Video",
           "description": "This video includes highlights from the test, including demonstrations and feedback sessions.",
           "thumbnail": "assets/media/4th_dan_video.png",
-          "url": ""
+          "linkType": "external",
+          "target": "https://youtube.com",
+          "buttonLabel": "Watch Video"
         }
       ]
     },

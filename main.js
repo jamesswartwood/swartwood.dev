@@ -43,12 +43,12 @@ function renderPage(data) {
     <p style="font-size: 0.95rem; color: #cfd3dc;">${b.about}</p>
   `;
 
-  // 3. Work Experience with Grouping for Consecutive Company Roles
+  // 3. Work Experience with Grouping
   const expContainer = document.getElementById('experience-container');
   const groupedExperience = groupConsecutiveItems(data.experience, 'company');
   expContainer.innerHTML = groupedExperience.map(renderExperienceGroup).join('');
 
-  // 4. Volunteering with Grouping for Consecutive Organization Roles
+  // 4. Volunteering with Grouping
   const volContainer = document.getElementById('volunteering-container');
   const groupedVolunteering = groupConsecutiveItems(data.volunteering, 'organization');
   volContainer.innerHTML = groupedVolunteering.map(group => {
@@ -78,7 +78,7 @@ function renderPage(data) {
     media: item.media
   })).join('');
 
-  // 6. Projects & Showcase (Placeholder tab)
+  // 6. Projects & Showcase
   const projContainer = document.getElementById('projects-container');
   if (projContainer && data.projects) {
     projContainer.innerHTML = data.projects.map(item => createSingleCardHTML({
@@ -91,7 +91,7 @@ function renderPage(data) {
     })).join('');
   }
 
-  // 7. Organizations (Placeholder tab)
+  // 7. Organizations
   const orgContainer = document.getElementById('organizations-container');
   if (orgContainer && data.organizations) {
     orgContainer.innerHTML = data.organizations.map(item => createSingleCardHTML({
@@ -112,9 +112,6 @@ function renderPage(data) {
   });
 }
 
-/**
- * Group consecutive items sharing identical key values (e.g. consecutive jobs at same company)
- */
 function groupConsecutiveItems(items, key) {
   if (!items || items.length === 0) return [];
   const groups = [];
@@ -211,34 +208,26 @@ function renderMedia(media) {
   `;
 }
 
-/* Sidebar Tab Switching */
-function setupSidebarNavigation() {
+function switchTab(targetId) {
   const categoryBtns = document.querySelectorAll('.category-btn');
   const subnav = document.getElementById('summary-subnav');
   const tabPanes = document.querySelectorAll('.tab-pane');
 
-  categoryBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.dataset.target;
+  categoryBtns.forEach(b => b.classList.toggle('active', b.dataset.target === targetId));
+  tabPanes.forEach(pane => pane.classList.toggle('active', pane.id === targetId));
 
-      // Update Active Button
-      categoryBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  if (targetId === 'tab-summary') {
+    subnav.style.display = 'block';
+  } else {
+    subnav.style.display = 'none';
+  }
 
-      // Update Active Tab Content
-      tabPanes.forEach(pane => {
-        pane.classList.toggle('active', pane.id === targetId);
-      });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-      // Show/Hide anchors subnavigation for Summary category
-      if (targetId === 'tab-summary') {
-        subnav.style.display = 'block';
-      } else {
-        subnav.style.display = 'none';
-      }
-
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+function setupSidebarNavigation() {
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.addEventListener('click', () => switchTab(btn.dataset.target));
   });
 }
 
@@ -250,8 +239,21 @@ function openModal(media) {
   document.getElementById('modal-desc').textContent = media.description || '';
   
   const linkBtn = document.getElementById('modal-link');
-  if (media.url && media.url.trim() !== '') {
-    linkBtn.href = media.url;
+  
+  if (media.linkType === 'external' && media.target) {
+    linkBtn.href = media.target;
+    linkBtn.target = '_blank';
+    linkBtn.onclick = null;
+    linkBtn.textContent = media.buttonLabel || 'Visit Link';
+    linkBtn.classList.remove('hidden');
+  } else if (media.linkType === 'internal' && media.target) {
+    linkBtn.href = 'javascript:void(0);';
+    linkBtn.target = '_self';
+    linkBtn.onclick = () => {
+      closeModal();
+      switchTab(media.target);
+    };
+    linkBtn.textContent = media.buttonLabel || 'View Section';
     linkBtn.classList.remove('hidden');
   } else {
     linkBtn.classList.add('hidden');
