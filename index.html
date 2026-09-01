@@ -17,9 +17,10 @@
     cssLink.href = `style.css?v=${Date.now()}`;
     document.head.appendChild(cssLink);
   </script>
+  <!-- Puter.js integration for AI Chatbot -->
+  <script src="https://js.puter.com/v2/"></script>
 </head>
 <body>
-  <!-- Fixed Top Navigation Bar -->
   <header id="top-nav">
     <div class="nav-left">
       <img id="nav-avatar" src="" alt="Profile Photo" />
@@ -31,15 +32,13 @@
     <div class="nav-right">
       <a id="nav-resume" href="resume.pdf" class="contact-link" download>Resume</a>
       <a id="nav-linkedin" href="" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
-      <a id="nav-contact-btn" href="" target="_blank" rel="noopener" class="btn-contact">Get in Touch</a>
+      <button id="nav-contact-btn" class="btn-contact" onclick="openContactModal()">Get in Touch</button>
     </div>
   </header>
 
   <div class="page-layout">
-    <!-- Fixed Sidebar Navigation -->
     <aside id="sidebar">
       <nav class="sidebar-nav">
-        <!-- Category 1: Professional Summary (Default) -->
         <div class="sidebar-group">
           <button class="category-btn active" data-target="tab-summary">
             Professional Summary
@@ -51,16 +50,12 @@
             <li><a href="#honors-section">Honors & Awards</a></li>
           </ul>
         </div>
-
-        <!-- Category 2: Projects & Showcase -->
         <div class="sidebar-group">
           <button class="category-btn" data-target="tab-projects">
             Projects & Showcase
           </button>
           <ul class="sub-nav-links" id="projects-subnav" style="display: none;"></ul>
         </div>
-
-        <!-- Category 3: Organizations -->
         <div class="sidebar-group">
           <button class="category-btn" data-target="tab-organizations">
             Organizations
@@ -70,37 +65,30 @@
       </nav>
     </aside>
 
-    <!-- Scrollable Main Content Stream -->
     <main id="main-content">
-      <!-- TAB 1: Professional Summary -->
       <div id="tab-summary" class="tab-pane active">
         <section id="about-section" class="content-section">
           <h2>About</h2>
           <div class="card" id="about-content"></div>
         </section>
-
         <section id="experience-section" class="content-section">
           <h2>Work Experience</h2>
           <div id="experience-container" class="card-list"></div>
         </section>
-
         <section id="volunteering-section" class="content-section">
           <h2>Volunteering</h2>
           <div id="volunteering-container" class="card-list"></div>
         </section>
-
         <section id="honors-section" class="content-section">
           <h2>Honors & Awards</h2>
           <div id="honors-container" class="card-list"></div>
         </section>
       </div>
 
-      <!-- TAB 2: Projects & Showcase -->
       <div id="tab-projects" class="tab-pane">
         <div id="projects-categories-wrapper"></div>
       </div>
 
-      <!-- TAB 3: Organizations -->
       <div id="tab-organizations" class="tab-pane">
         <div id="organizations-categories-wrapper"></div>
       </div>
@@ -116,6 +104,30 @@
       <h3 id="modal-title"></h3>
       <p id="modal-desc"></p>
       <a id="modal-link" href="" class="btn-contact hidden">Action</a>
+    </div>
+  </div>
+
+  <!-- Contact Form Pop-up Modal -->
+  <div id="contact-modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-overlay" onclick="closeContactModal()"></div>
+    <div class="modal-content form-modal-content">
+      <button class="modal-close" onclick="closeContactModal()">&times;</button>
+      <h3 id="contact-title" style="margin-bottom: 1rem; color: #fff;">Get in Touch</h3>
+      <iframe id="contact-iframe" class="inverted-form" src="" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+  </div>
+
+  <!-- Chatbot UI -->
+  <button id="chatbot-toggle" onclick="toggleChatbot()">Ask AI</button>
+  <div id="chatbot-window" class="hidden">
+    <div id="chatbot-header">
+      <h4>Portfolio AI Assistant</h4>
+      <button onclick="toggleChatbot()">&times;</button>
+    </div>
+    <div id="chatbot-messages"></div>
+    <div id="chatbot-input-area">
+      <input type="text" id="chatbot-input" placeholder="Ask about my experience..." onkeypress="handleChatEnter(event)" />
+      <button onclick="sendChatMessage()">Send</button>
     </div>
   </div>
 

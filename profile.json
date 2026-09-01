@@ -4,9 +4,12 @@
     "title": "Robotics | Martial Arts",
     "avatar": "assets/james.jpg",
     "linkedin": "https://www.linkedin.com/in/jamesswartwood",
-    "contactFormUrl": "https://forms.google.com/your-form-url",
+    "contactFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSc.../viewform?embedded=true",
     "resumePath": "resume.pdf",
-    "about": "Robotics and Computer Vision Engineer specializing in multi-agent LLM systems, human-in-the-loop interfaces, gesture control, and 3D perception."
+    "about": [
+      "Robotics and Computer Vision Engineer specializing in multi-agent LLM systems, human-in-the-loop interfaces, gesture control, and 3D perception.",
+      "Beyond engineering, I am a dedicated 4th Dan martial arts instructor and the founder of Self Defense NW, focusing on community education, empowerment, and making practical safety techniques accessible to vulnerable groups."
+    ]
   },
   "experience": [
     {
