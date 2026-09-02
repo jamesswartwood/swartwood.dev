@@ -162,3 +162,62 @@ html {
 #chatbot-input-area button {
   background-color: var(--accent-red); border: none; color: white; padding: 8px 14px; border-radius: 20px; cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  /* Allow header elements to wrap cleanly */
+  #top-nav {
+    position: relative;
+    height: auto;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  /* Stack sidebar above content instead of fixing it left */
+  .page-layout {
+    padding-top: 0;
+    padding-right: 0;
+    flex-direction: column;
+  }
+
+  #sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+  }
+
+  /* Reset main content margin */
+  #main-content {
+    margin-left: 0;
+    padding: 1.5rem 1rem 5rem 1rem;
+  }
+
+  /* Stack organization & experience headers for small screens */
+  .card {
+    flex-direction: column;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.5rem;
+  }
+
+  /* Adapt chatbot for mobile screens */
+  #chatbot-window {
+    width: calc(100vw - 30px);
+    right: 15px;
+    bottom: 75px;
+  }
+}

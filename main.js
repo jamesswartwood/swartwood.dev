@@ -24,7 +24,7 @@ function renderPage(data) {
 
   document.getElementById('nav-avatar').src = b.avatar || '';
   document.getElementById('nav-name').textContent = b.name;
-  document.getElementById('nav-title').textContent = b.title;
+  document.getElementById('nav-tags').textContent = b.tags;
   document.getElementById('nav-linkedin').href = b.linkedin;
   
   // Save form URL to the iframe immediately
@@ -70,18 +70,10 @@ function renderPage(data) {
     logo: item.logo, title: item.title, subtitle: `Issued by ${item.issuer} · ${item.date}`, meta: item.description, bullets: [], media: item.media
   })).join('');
 
-  if (data.projects && data.projects.length > 0) {
-    renderCategorizedSection({
-      categories: data.projects, wrapperId: 'projects-categories-wrapper', subnavId: 'projects-subnav', renderItemFn: item => createSingleCardHTML({
-        logo: item.logo, title: item.title, subtitle: item.role, meta: item.period, bullets: item.bullets, media: item.media
-      })
-    });
-  }
-
   if (data.organizations && data.organizations.length > 0) {
     renderCategorizedSection({
       categories: data.organizations, wrapperId: 'organizations-categories-wrapper', subnavId: 'organizations-subnav', renderItemFn: item => createSingleCardHTML({
-        logo: item.logo, title: item.name, subtitle: item.role, meta: item.period, bullets: item.bullets, media: item.media
+        logo: item.logo, title: item.name, subtitle: item.role, meta: item.period, bullets: item.bullets, media: item.media, website: item.website
       })
     });
   }
@@ -151,12 +143,19 @@ function renderGroupedTimeline(group, entityName) {
   `;
 }
 
-function createSingleCardHTML({ logo, title, subtitle, meta, bullets, media }) {
+function createSingleCardHTML({ logo, title, subtitle, meta, bullets, media, website }) {
   return `
     <article class="card">
       <img class="card-logo" src="${logo || 'assets/default_logo.png'}" alt="logo" />
       <div class="card-body">
-        <div class="card-header"><h3>${title}</h3>${subtitle ? `<div class="subtitle">${subtitle}</div>` : ''}${meta ? `<div class="meta-text">${meta}</div>` : ''}</div>
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+          <div>
+            <h3>${title}</h3>
+            ${subtitle ? `<div class="subtitle">${subtitle}</div>` : ''}
+            ${meta ? `<div class="meta-text">${meta}</div>` : ''}
+          </div>
+          ${website ? `<a href="${website}" target="_blank" rel="noopener" class="btn-contact" style="padding: 0.35rem 0.8rem; font-size: 0.8rem;">Website</a>` : ''}
+        </div>
         ${renderBullets(bullets)}
         ${renderMedia(media)}
       </div>
@@ -182,7 +181,7 @@ function switchTab(targetId) {
   document.querySelectorAll('.category-btn').forEach(b => b.classList.toggle('active', b.dataset.target === targetId));
   document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.toggle('active', pane.id === targetId));
 
-  const subnavMap = { 'tab-summary': 'summary-subnav', 'tab-projects': 'projects-subnav', 'tab-organizations': 'organizations-subnav' };
+  const subnavMap = { 'tab-summary': 'summary-subnav', 'tab-organizations': 'organizations-subnav' };
   Object.entries(subnavMap).forEach(([tab, subnavId]) => {
     const el = document.getElementById(subnavId);
     if (el) el.style.display = (tab === targetId) ? 'block' : 'none';
